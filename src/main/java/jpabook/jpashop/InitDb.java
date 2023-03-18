@@ -36,7 +36,7 @@ public class InitDb {
     static class InitService {
 
         private final EntityManager em;
-        
+
         public void doInit1() {
             Member member = createMember("userA", "서울", "1", "1111");
             em.persist(member);
