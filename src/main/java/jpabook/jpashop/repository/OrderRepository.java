@@ -61,4 +61,12 @@ public class OrderRepository {
 
         return query.getResultList();
     }
+
+    public List<Order> findAllWithMemberDelivery() {
+        return em.createQuery(
+                "select o from Order o" +
+                        " inner join fetch o.member m" +
+                        " inner join fetch o.delivery d", Order.class)
+                .getResultList();
+    }
 }
